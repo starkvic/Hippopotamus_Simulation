@@ -24,8 +24,15 @@ SECRET_KEY = 'django-insecure-0+_j6=bd_ww-q$xk6&llsal+0wa7g)=y2bx9rhm+_%rt1&j=gg
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+import os
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', 'localhost').split(',')
+
+ALLOWED_HOSTS = [
+    'hippopotamussimulation-production.up.railway.app',
+    'localhost',
+    '127.0.0.1'
+]
 
 
 # Application definition
