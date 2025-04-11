@@ -9,3 +9,6 @@ def simulation(request):
 
 def about(request):
     return render(request, 'simulation_app/about.html')
+
+def results(request):
+    return render(request, 'simulation_app/results.html')

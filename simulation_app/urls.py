@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import home, simulation, about  # assuming 'home' and 'about' are also defined
+from . import views
 
 urlpatterns = [
-    path('', home, name='home'),
-    path('simulation/', simulation, name='simulation'),
-    path('about/', about, name='about'),
+    path('', views.home, name='home'),
+    path('simulation/', views.simulation, name='simulation'),
+    path('about/', views.about, name='about'),
+    path('results/', views.results, name='results'),  # Added results page
 ]
