@@ -1,0 +1,14 @@
+{% extends 'simulation_app/base.html' %}
+{% load static %}
+
+{% block title %}Simulation Settings{% endblock %}
+
+{% block content %}
+<h1>Simulation Settings</h1>
+<p>Adjust the parameters below and run the simulation.</p>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Run Simulation</button>
+</form>
+{% endblock %}

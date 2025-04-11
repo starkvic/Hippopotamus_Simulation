@@ -6,4 +6,5 @@ urlpatterns = [
     path('simulation/', views.simulation, name='simulation'),
     path('about/', views.about, name='about'),
     path('results/', views.results, name='results'),  # Added results page
+    path('settings/', views.simulation_settings, name='settings'),
 ]

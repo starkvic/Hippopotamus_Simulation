@@ -4,13 +4,28 @@
 
 {% block title %}Simulation Results{% endblock %}
 
+{% block extra_head %}
+    <!-- Load p5.js from a CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <h1>Simulation Results</h1>
+    <p>The simulation graph below dynamically updates using p5.js:</p>
+
+    <!-- This canvas will be automatically created by p5.js -->
+    <div id="simulation-canvas"></div>
+
+    <!-- Include your p5.js sketch -->
+    <script src="{% static 'simulation_app/js/sketch.js' %}"></script>
+{% endblock %}
+
 {% block content %}
 <h1>Simulation Results</h1>
-<p>The simulation graph below dynamically updates using p5.js:</p>
-
-<!-- This canvas will be automatically created by p5.js -->
-<div id="simulation-canvas"></div>
-
-<!-- Include your p5.js sketch -->
-<script src="{% static 'simulation_app/js/sketch.js' %}"></script>
+{% if results %}
+    <p>Hippopotamus Algorithm ran with best voltage: {{ results.0.0|floatformat:2 }} V and best power: {{ results.0.1|floatformat:2 }} W.</p>
+    <!-- You can display more detailed results as needed. -->
+    <p>Convergence Curve:</p>
+    <!-- For example, include the saved convergence plot if you saved it as a static file -->
+    <img src="{% static 'simulation_app/results/hippopotamus_convergence.png' %}" alt="Convergence Graph">
+{% else %}
+    <p>No results available.</p>
+{% endif %}
 {% endblock %}
