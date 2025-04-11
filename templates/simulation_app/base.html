@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Default Title{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'simulation_app/css/style.css' %}">
+        {% block extra_head %}{% endblock %}
+    </head>
+    
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'simulation' %}">Simulation</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main Content -->
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    
+    <script src="{% static 'simulation_app/js/main.js' %}"></script>
+</body>
+</html>

@@ -1,14 +1,9 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>About the Simulation</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'simulation_app/css/style.css' %}">
-</head>
-<body>
+{% extends 'simulation_app/base.html' %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
     <h1>About This Simulation</h1>
     <p>This simulation demonstrates how our algorithm works to generate and process data. The algorithm generates multiple CSV files containing key simulation data, and the interactive visualization (powered by p5.js) shows dynamic aspects of the process.</p>
     <p>Additional details about the methodology, parameters, and future developments can be described here.</p>
-</body>
-</html>
+{% endblock %}

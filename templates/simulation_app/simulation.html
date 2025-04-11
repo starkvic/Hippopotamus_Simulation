@@ -1,12 +1,9 @@
+{% extends 'simulation_app/base.html' %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'simulation_app/css/style.css' %}">
-<script src="{% static 'simulation_app/js/main.js' %}"></script>
+{% block title %}Algorithm Simulation{% endblock %}
 
-<!DOCTYPE html>
-<html>
-<head>
+{% block extra_head %}
     <meta charset="UTF-8">
-    <title>Algorithm Simulation</title>
     <!-- Load p5.js from a CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <!-- Load your custom p5.js sketch -->
@@ -14,7 +11,4 @@
     <style>
       body { margin: 0; padding: 0; }
     </style>
-</head>
-<body>
-</body>
-</html>
+{% endblock %}
