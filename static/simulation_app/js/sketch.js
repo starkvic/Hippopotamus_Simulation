@@ -32,7 +32,7 @@ let hippoHeight = 60; // Adjust icon height as desired
 // and "Population" provides voltage data (used for x-axis).
 function preload() {
   // Update the filename here as needed (e.g., "algorithm_name.csv")
-  tableData = loadTable('/static/simulation_app/csv/hippopotamus_detailed_results.csv', 'csv', 'header', onCSVLoaded, onCSVError);
+  tableData = loadTable('/static/simulation_app/csv/abc_detailed_results.csv', 'csv', 'header', onCSVLoaded, onCSVError);
   hippoImg = loadImage('/static/simulation_app/images/hippo.png');
   hippoImgGreen = loadImage('/static/simulation_app/images/hippo1.png');
 }
